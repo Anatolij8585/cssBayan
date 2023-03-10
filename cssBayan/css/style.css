@@ -1,10 +1,11 @@
 body {
     margin: 0 auto;
+    overflow-y: auto;
 }
 
 .wrapper {
     max-width: 1920px;
-    min-height: 1080px;
+    max-height: 1080px;
 }
 
 .header {
@@ -41,13 +42,6 @@ body {
     color: blue;
 }
 
-.bayan-item:checked ~ .bayan-title {
-    color: blue;
-    background-image: url(../assets/icons/times.svg);
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
 .bayan-item {
     width: 0;
     height: 0;
@@ -55,14 +49,8 @@ body {
     position: absolute;
 }
 
-.bayan-item:checked ~ .mem {
-    display: block;
-}
-
 .mem {
     display: none;
-    /* display: flex;
-    justify-content: center; */
     margin: 20px auto;
 }
 
@@ -73,6 +61,39 @@ body {
 .img-5 {
     width: 200px;
     height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.img-1:hover,
+.img-2:hover,
+.img-3:hover,
+.img-4:hover,
+.img-5:hover {
+    cursor: pointer;
+    transform: scale(2);
+    transition: all .3s ease-in-out;
+}
+
+.bayan-item:checked ~ .bayan-title {
+    color: blue;
+    background-image: url(../assets/icons/times.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.bayan-item:hover ~ .bayan-title {
+    color: blue;
+    background-image: url(../assets/icons/times.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.bayan-title:hover ~ .mem,
+.bayan-item:checked ~ .mem {
+    color: blue;
+    display: block;
 }
 
 .footer {
